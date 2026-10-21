@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Handy Flash Services — Calgary handyman. Furniture assembly, TV wall mounting, wall decor, curtain rods, blinds, small home repairs. $35/hour." />
+<meta name="theme-color" content="#0e0f0c" />
+<title>Handy Flash Services — Calgary Handyman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0f0c;
+    --surface: #171813;
+    --surface-2: #20211a;
+    --ink: #f8f7f2;
+    --muted: #b8bab1;
+    --line: #33352c;
+    --accent: #ffc62a;
+    --accent-strong: #e2a40a;
+    --accent-ink: #17150d;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(14,15,12,.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 0;
+  }
+  .header-inner img.logo { height: 64px; width: auto; }
+  .header-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800; font-size: 1.35rem;
+    letter-spacing: .02em; text-transform: uppercase;
+    line-height: 1; white-space: nowrap;
+  }
+  .header-cta {
+    margin-left: auto;
+    background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; text-decoration: none;
+    padding: 10px 18px; border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 64px 0 56px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,198,42,.10), transparent 70%),
+      var(--bg);
+  }
+  .hero img.hero-logo { width: min(420px, 80%); margin: 0 auto 18px; }
+  .hero h1 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    line-height: .95; letter-spacing: .01em;
+    text-transform: uppercase;
+  }
+  .hero h1 .y { color: var(--accent); }
+  .hero .sub {
+    margin: 14px 0 0; color: var(--muted);
+    font-size: 1.1rem;
+  }
+  .hero .price {
+    margin: 26px 0 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800; text-transform: uppercase;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    color: var(--accent); line-height: 1.05;
+  }
+  .hero .price small {
+    display: block; color: var(--muted);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500; font-size: 1rem; text-transform: none;
+    margin-top: 6px;
+  }
+  .hero .crew {
+    margin: 18px 0 0; font-size: 1.15rem; font-weight: 600;
+  }
+  .hero .crew strong { color: var(--accent); }
+  .btn {
+    display: inline-block; margin-top: 28px;
+    background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; font-size: 1.15rem; text-decoration: none;
+    padding: 16px 34px; border-radius: 12px;
+  }
+  .btn small { display: block; font-weight: 500; font-size: .85rem; }
+
+  /* Sections */
+  .section { padding: 72px 0; }
+  .section.alt { background: var(--surface); }
+  .eyebrow {
+    color: var(--accent); font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em;
+    font-size: .85rem; margin: 0 0 10px;
+  }
+  .section h2 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800; text-transform: uppercase;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    line-height: .95;
+  }
+  .lede { color: var(--muted); max-width: 640px; margin: 14px 0 0; }
+
+  /* Services */
+  .services {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 36px;
+  }
+  .card {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 14px; padding: 24px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700; font-size: 1.45rem;
+    text-transform: uppercase; letter-spacing: .02em;
+    color: var(--accent);
+  }
+  .card p { margin: 0; color: var(--muted); }
+
+  /* Gallery */
+  .gallery {
+    display: grid; gap: 12px; margin-top: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .gallery figure { margin: 0; }
+  .gallery img {
+    width: 100%; height: 240px; object-fit: cover;
+    border-radius: 12px; border: 1px solid var(--line);
+  }
+  .gallery figcaption {
+    margin-top: 8px; color: var(--muted); font-size: .9rem;
+  }
+
+  /* Reviews */
+  .reviews {
+    display: grid; gap: 16px; margin-top: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .review {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 14px; padding: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .review .stars { color: var(--accent); letter-spacing: .15em; }
+  .review blockquote { margin: 0; font-size: 1.02rem; }
+  .review .meta { margin-top: auto; color: var(--muted); font-size: .88rem; }
+  .rating-line { margin-top: 28px; font-weight: 600; }
+  .rating-line .stars { color: var(--accent); }
+
+  /* Pricing */
+  .pricing-box {
+    margin-top: 36px; background: var(--surface-2);
+    border: 2px solid var(--accent); border-radius: 16px;
+    padding: 36px; text-align: center;
+  }
+  .pricing-box .big {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800; text-transform: uppercase;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    color: var(--accent); line-height: 1;
+  }
+  .pricing-box ul {
+    list-style: none; padding: 0; margin: 20px 0 0;
+    display: flex; flex-wrap: wrap; gap: 10px 26px;
+    justify-content: center; color: var(--muted);
+  }
+  .pricing-box ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+
+  /* About / contact */
+  .about-grid {
+    display: grid; gap: 32px; margin-top: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
+  }
+  .checklist { list-style: none; padding: 0; margin: 18px 0 0; }
+  .checklist li { padding: 6px 0; color: var(--muted); }
+  .checklist li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+  .contact-card {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 14px; padding: 28px;
+  }
+  .contact-card h3 {
+    margin: 0 0 12px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700; font-size: 1.5rem; text-transform: uppercase;
+  }
+  .contact-card p { margin: 0 0 14px; color: var(--muted); }
+  .contact-line {
+    display: block; font-size: 1.25rem; font-weight: 700;
+    color: var(--accent); text-decoration: none; margin: 8px 0;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0; color: var(--muted); font-size: .9rem;
+    text-align: center;
+  }
+
+  @media (max-width: 560px) {
+    .header-inner img.logo { height: 48px; }
+    .header-name { font-size: 1.05rem; }
+    .header-cta { padding: 8px 12px; font-size: .9rem; }
+    .section { padding: 52px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-inner">
+    <img class="logo" src="logo.png" alt="Handy Flash Services logo" />
+    <div class="header-name">Handy Flash Services</div>
+    <a class="header-cta" href="sms:+14039758453">Text (403) 975-8453</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="logo.png" alt="Handy Flash Services — Handyman Services" />
+    <h1>Your home. <span class="y">Done right.</span></h1>
+    <p class="sub">Reliable handyman in Calgary, Alberta</p>
+    <p class="price">$35 per hour<small>2-hour minimum &middot; no hidden fees</small></p>
+    <p class="crew">Need it faster? <strong>2 people = twice as fast.</strong></p>
+    <a class="btn" href="sms:+14039758453">Text me for a free quote!<small>(403) 975-8453 &middot; just send a photo of the job</small></a>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <p class="eyebrow">What I do</p>
+    <h2>Reliable help for the jobs on your list.</h2>
+    <p class="lede">From mounting one picture to assembling a full PAX system, each job gets the same careful attention.</p>
+    <div class="services">
+      <div class="card">
+        <h3>Furniture Assembly &amp; Disassembly</h3>
+        <p>IKEA PAX wardrobes, beds, dressers, desks, shelves — assembled or taken apart with care. All hardware sorted, nothing lost.</p>
+      </div>
+      <div class="card">
+        <h3>TV Wall Mounting</h3>
+        <p>Any size, any wall. Secure, level installation with clean cable hiding — it will look like a picture on the wall.</p>
+      </div>
+      <div class="card">
+        <h3>Pictures, Mirrors &amp; D&eacute;cor</h3>
+        <p>Pictures, mirrors, shelves, clocks and wall art — hung straight and secure, exactly where you want them.</p>
+      </div>
+      <div class="card">
+        <h3>Curtain Rods &amp; Blinds</h3>
+        <p>Measured, level and solid — even on high ceilings. Rods, tracks and window blinds installed right.</p>
+      </div>
+      <div class="card">
+        <h3>Fitness Equipment Setup</h3>
+        <p>Treadmills, benches, racks and home gym gear — assembled correctly and safely, ready to use.</p>
+      </div>
+      <div class="card">
+        <h3>Small Home Repairs</h3>
+        <p>Handles, hinges, caulking, touch-ups — the little jobs that pile up around the house. Just ask.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="work">
+  <div class="wrap">
+    <p class="eyebrow">Recent work</p>
+    <h2>A look at completed projects.</h2>
+    <p class="lede">Real jobs, real homes in Calgary.</p>
+    <div class="gallery">
+      <figure><img src="work-tv-wall.jpg" alt="TV mounted on the wall like a picture" loading="lazy" /><figcaption>TV mounted like a picture — cables hidden</figcaption></figure>
+      <figure><img src="work-pipe-shelf.jpg" alt="Industrial pipe shelf installed" loading="lazy" /><figcaption>Industrial pipe shelf, level and solid</figcaption></figure>
+      <figure><img src="work-green-chair.jpg" alt="Assembled armchair" loading="lazy" /><figcaption>Armchair assembled</figcaption></figure>
+      <figure><img src="work-nightstand.jpg" alt="Assembled white nightstand" loading="lazy" /><figcaption>Nightstand assembled</figcaption></figure>
+      <figure><img src="work-bed-frame.jpg" alt="Assembled bed frame" loading="lazy" /><figcaption>Bed frame assembled</figcaption></figure>
+      <figure><img src="work-picture-bed.jpg" alt="Picture hung above the bed" loading="lazy" /><figcaption>Picture hung above the bed</figcaption></figure>
+      <figure><img src="work-three-pictures.jpg" alt="Three pictures hung straight in a row" loading="lazy" /><figcaption>Three pictures, perfectly straight</figcaption></figure>
+      <figure><img src="work-tv-bracket.jpg" alt="TV wall bracket installed" loading="lazy" /><figcaption>TV bracket — ready for mounting</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow">Client reviews</p>
+    <h2>Five-star work, in their own words.</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Fantastic! Faster than I thought! My house is big, and it was super super fast! I should have hired him earlier. 1000% someone I will be calling again!&rdquo;</blockquote>
+        <div class="meta">Heavy Lifting &amp; Loading &middot; May 2026</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Had a great overall experience and happy with the IKEA unit built.&rdquo;</blockquote>
+        <div class="meta">IKEA Assembly &middot; April 2026</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Denys was super friendly, arrived prepared, and worked quickly! Left no mess behind which I really appreciated!&rdquo;</blockquote>
+        <div class="meta">Furniture Assembly &middot; April 2026</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Denys was prompt with his replies and punctual. He saved us a lot of hassle by managing to repair a damaged IKEA Malm dresser which doesn't have replacement parts now as it is an older model. Then, he assembled a fairly complicated cabinet with many parts bought on Amazon in an hour. And finally, he affixed a new photo frame and fixed a wardrobe shelf. All this in just over 2 hours! I would highly recommend him for your tasks.&rdquo;</blockquote>
+        <div class="meta">Furniture Assembly &middot; March 2026</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Mounted my TV for me. Deny was a great guy A++ service&rdquo;</blockquote>
+        <div class="meta">General Mounting &middot; March 2026</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Denys did an excellent job installing two curtain rods on very high ceilings. The final result looks great, and I'm extremely happy with the quality of his work.&rdquo;</blockquote>
+        <div class="meta">Furniture Assembly &middot; December 2025</div>
+      </div>
+    </div>
+    <p class="rating-line"><span class="stars">★★★★★</span> Top rated 5.0 on TaskRabbit</p>
+  </div>
+</section>
+
+<section class="section alt" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2>Straightforward pricing.</h2>
+    <div class="pricing-box">
+      <div class="big">$35 / hour</div>
+      <ul>
+        <li>2-hour minimum</li>
+        <li>No hidden fees</li>
+        <li>Professional tools included</li>
+        <li>Two-person crew available — twice as fast (ask for a quote)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <p class="eyebrow">Meet your handyman</p>
+    <h2>Calgary service with care behind it.</h2>
+    <div class="about-grid">
+      <div>
+        <p><strong>Hi, I&rsquo;m Denys.</strong> I&rsquo;m an experienced Calgary handyman who believes the small details matter: showing up on time, working efficiently, protecting your space and leaving everything clean when the job is done.</p>
+        <p>I bring my own professional tools and work carefully without wasting your time. My work has earned a <strong>top-rated 5.0 score on TaskRabbit</strong>.</p>
+        <ul class="checklist">
+          <li>Punctual and dependable</li>
+          <li>Clean, careful work</li>
+          <li>All tools supplied</li>
+          <li>Clear hourly pricing</li>
+          <li>Evenings &amp; weekends available</li>
+        </ul>
+      </div>
+      <div class="contact-card">
+        <h3>Get a free quote</h3>
+        <p>Text me — the fastest way. Just send a photo of the job and I&rsquo;ll confirm the estimate.</p>
+        <a class="contact-line" href="sms:+14039758453">(403) 975-8453</a>
+        <p>Prefer email?</p>
+        <a class="contact-line" href="mailto:handyflash.ca@gmail.com">handyflash.ca@gmail.com</a>
+        <p style="margin-top:16px">Service area: Calgary, AB</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Handy Flash Services &middot; Calgary, Alberta &middot; $35/hour, 2-hour minimum
+  </div>
+</footer>
+
+</body>
+</html>
