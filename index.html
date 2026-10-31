@@ -199,6 +199,36 @@
     color: var(--accent); text-decoration: none; margin: 8px 0;
   }
 
+  /* Booking form */
+  .book-form {
+    margin-top: 36px; background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 16px; padding: 32px;
+  }
+  .form-grid {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .form-grid .full { grid-column: 1 / -1; }
+  .book-form label {
+    display: block; font-weight: 600; font-size: .95rem; margin-bottom: 6px;
+  }
+  .book-form label .hint { display: block; font-weight: 400; color: var(--muted); font-size: .85rem; margin-top: 2px; }
+  .book-form input, .book-form select, .book-form textarea {
+    width: 100%; background: var(--bg); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; font: inherit; font-size: 1rem;
+  }
+  .book-form input:focus, .book-form select:focus, .book-form textarea:focus {
+    outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent);
+  }
+  .book-form textarea { min-height: 110px; resize: vertical; }
+  .book-form button.btn { border: none; cursor: pointer; width: 100%; margin-top: 22px; }
+  .thanks {
+    display: none; margin-top: 36px; background: var(--surface-2);
+    border: 2px solid var(--accent); border-radius: 16px; padding: 28px; text-align: center;
+    font-size: 1.1rem; font-weight: 600;
+  }
+
   footer {
     border-top: 1px solid var(--line);
     padding: 28px 0; color: var(--muted); font-size: .9rem;
@@ -229,7 +259,7 @@
     <p class="sub">Reliable handyman in Calgary, Alberta</p>
     <p class="price">$35 per hour<small>2-hour minimum &middot; no hidden fees</small></p>
     <p class="crew">Need it faster? <strong>2 people = twice as fast.</strong></p>
-    <a class="btn" href="mailto:handyflash.ca@gmail.com?subject=Booking%20request%20%E2%80%94%20Handy%20Flash%20Services">Book Now<small>Email me a photo of the job for a free quote</small></a>
+    <a class="btn" href="#book">Book Now<small>Quick form — photos, address &amp; preferred day</small></a>
   </div>
 </section>
 
@@ -323,7 +353,60 @@
   </div>
 </section>
 
-<section class="section" id="about">
+<section class="section" id="book">
+  <div class="wrap">
+    <p class="eyebrow">Book a job</p>
+    <h2>Book Now — tell me about the job.</h2>
+    <p class="lede">Fill out this quick form and it goes straight to my email. Photos of the job help me give you an exact quote.</p>
+    <div class="thanks" id="thanks">Thank you! Your request has been sent — I&rsquo;ll reply to your email shortly.</div>
+    <form class="book-form" id="book-form" action="https://formsubmit.co/handyflash.ca@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New booking request — Handy Flash Services" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://handyflashservices.github.io/handy-flash-services/?sent=1#book" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="form-grid">
+        <div>
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" name="name" required autocomplete="name" />
+        </div>
+        <div>
+          <label for="f-email">Your email</label>
+          <input id="f-email" type="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="full">
+          <label for="f-address">Address<span class="hint">Where the job is — street address in Calgary or area</span></label>
+          <input id="f-address" type="text" name="address" required autocomplete="street-address" />
+        </div>
+        <div>
+          <label for="f-date">Preferred day</label>
+          <input id="f-date" type="date" name="preferred_date" required />
+        </div>
+        <div>
+          <label for="f-time">Preferred time</label>
+          <select id="f-time" name="preferred_time">
+            <option>Any time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="f-job">What needs to be done?</label>
+          <textarea id="f-job" name="job_description" required placeholder="For example: assemble an IKEA PAX wardrobe, mount a 65-inch TV…"></textarea>
+        </div>
+        <div class="full">
+          <label for="f-photos">Photos of the job<span class="hint">Please attach photos — they help me confirm the price before I come</span></label>
+          <input id="f-photos" type="file" name="attachment" accept="image/*" multiple />
+        </div>
+      </div>
+      <button class="btn" type="submit">Send Request</button>
+    </form>
+    <p style="margin-top:16px; color: var(--muted)">Prefer to write yourself? Email me at <a href="mailto:handyflash.ca@gmail.com" style="color: var(--accent)">handyflash.ca@gmail.com</a></p>
+  </div>
+</section>
+
+<section class="section alt" id="about">
   <div class="wrap">
     <p class="eyebrow">Meet your handyman</p>
     <h2>Calgary service with care behind it.</h2>
@@ -343,7 +426,7 @@
         <h3>Get a free quote</h3>
         <p>Email me — just send a photo of the job and I&rsquo;ll confirm the estimate.</p>
         <a class="contact-line" href="mailto:handyflash.ca@gmail.com">handyflash.ca@gmail.com</a>
-        <a class="btn" href="mailto:handyflash.ca@gmail.com?subject=Booking%20request%20%E2%80%94%20Handy%20Flash%20Services" style="margin-top:14px">Book Now</a>
+        <a class="btn" href="#book" style="margin-top:14px">Book Now</a>
         <p style="margin-top:16px">Service area: Calgary, AB</p>
       </div>
     </div>
@@ -355,6 +438,21 @@
     &copy; 2026 Handy Flash Services &middot; Calgary, Alberta &middot; $35/hour, 2-hour minimum
   </div>
 </footer>
+
+<script>
+  (function () {
+    var dateInput = document.getElementById('f-date');
+    if (dateInput) {
+      dateInput.min = new Date().toISOString().split('T')[0];
+    }
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      var thanks = document.getElementById('thanks');
+      var form = document.getElementById('book-form');
+      if (thanks) { thanks.style.display = 'block'; }
+      if (form) { form.style.display = 'none'; }
+    }
+  })();
+</script>
 
 </body>
 </html>
