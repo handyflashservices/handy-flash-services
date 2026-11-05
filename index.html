@@ -77,23 +77,23 @@
     margin: 14px 0 0; color: var(--muted);
     font-size: 1.1rem;
   }
-  .hero .price {
+  .hero .price, .book-price {
     margin: 26px 0 0;
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 800; text-transform: uppercase;
     font-size: clamp(1.9rem, 5vw, 3rem);
     color: var(--accent); line-height: 1.05;
   }
-  .hero .price small {
+  .hero .price small, .book-price small {
     display: block; color: var(--muted);
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500; font-size: 1rem; text-transform: none;
     margin-top: 6px;
   }
-  .hero .crew {
+  .hero .crew, .book-crew {
     margin: 18px 0 0; font-size: 1.15rem; font-weight: 600;
   }
-  .hero .crew strong { color: var(--accent); }
+  .hero .crew strong, .book-crew strong { color: var(--accent); }
   .btn {
     display: inline-block; margin-top: 28px;
     background: var(--accent); color: var(--accent-ink);
@@ -361,17 +361,11 @@
   <div class="wrap">
     <p class="eyebrow">Book a job</p>
     <h2>Book Now — tell me about the job.</h2>
-    <p class="lede">No forms — booking is simply by email. Tap <strong>Book Now</strong> and your email app opens with a ready-made template. All I need from you:</p>
-    <ul class="checklist">
-      <li>Your name</li>
-      <li>What needs to be done — assembly, TV mounting, hanging, repairs</li>
-      <li>Address in Calgary or the area</li>
-      <li>Preferred day and time</li>
-      <li>Photos of the job — attach them if you can, they help me give you an exact quote</li>
-      <li>How to reach you back — your phone or email</li>
-    </ul>
+    <p class="lede">No forms — booking is simply by email. Tap <strong>Book Now</strong> and your email app opens with a ready-made template — everything I need is already in it.</p>
+    <p class="book-price">$35 per hour<small>2-hour minimum &middot; no hidden fees</small></p>
+    <p class="book-crew">Need it faster? <strong>2 people = twice as fast.</strong></p>
     <p style="margin-top:22px"><a class="btn btn-big" href="mailto:handyflash.ca@gmail.com?subject=Booking%20request%20%E2%80%94%20Handy%20Flash%20Services&amp;body=Name%3A%0D%0AWhat%20needs%20to%20be%20done%3A%0D%0AAddress%20(Calgary%20area)%3A%0D%0APreferred%20day%3A%0D%0APreferred%20time%3A%0D%0A%0D%0A(Attach%20photos%20of%20the%20job%20if%20you%20can%20%E2%80%94%20they%20help%20me%20give%20an%20exact%20quote.)">Book Now</a></p>
-    <p style="margin-top:16px; color: var(--muted)">Or write me directly at <a href="mailto:handyflash.ca@gmail.com" style="color: var(--accent)">handyflash.ca@gmail.com</a> — $35/hour, 2-hour minimum.</p>
+    <p style="margin-top:16px; color: var(--muted)">Or write me directly at <a href="mailto:handyflash.ca@gmail.com" style="color: var(--accent)">handyflash.ca@gmail.com</a></p>
   </div>
 </section>
 
